@@ -12,7 +12,7 @@ class StackedAreaVis {
         this.years = ['1860', '1870', '1880', '1900', '1910', '1920']
         this.colorScale = d3.scaleOrdinal()
             .domain(["F", "M", 'B', 'C', 'I', 'J', 'W', 'N', 'Im'])
-            .range(["#3E70E6", "#86F54E", "F2A56D", "green", "70F5F4", "yellow", "BD73E6", "FC727F", "728BFC"]);
+            .range(["#3E70E6", "#86F54E", "#F2A56D", "green", "#70F5F4", "yellow", "#BD73E6", "#FC727F", "#728BFC"]);
         // this.colorScale = d3.scaleOrdinal(d3.schemeCategory10);
         // .domain(this.years)
         // .range(["pink", "lightblue"]);
