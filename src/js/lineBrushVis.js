@@ -25,7 +25,7 @@ class LineBrushVis {
     initVis() {
         let vis = this;
 
-        vis.margin = {top: 100, right: 250, bottom: 60, left: 90};
+        vis.margin = {top: 130, right: 250, bottom: 60, left: 90};
         vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
         vis.height = $("#" + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
         vis.padding = 10;
