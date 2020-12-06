@@ -1,0 +1,113 @@
+body {
+    /* font-size: 1.3em; */
+}
+
+#immigrantDetails > div {
+    font-size: 18px;
+}
+
+.container-fluid {
+    height: 100vh;
+    padding-top: 1vh;
+}
+
+.bubble-title {
+    font-size: 20px;
+}
+
+#text-description{
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.tick > text {
+    font-size: 1.5em;
+}
+
+#topTen {
+    height:20vh;
+    width: 100%;
+}
+
+.title-header {
+    height: 10vh;
+    padding: 0;
+}
+
+.toolTip {
+    background-color: #E8E8E8;
+}
+
+#distanceVisToolTip {
+    border: 2px solid darkgrey;
+    border-radius: 2px;
+    margin: 5px;
+}
+
+#distanceVisToolTip > div {
+    padding: 3px;
+}
+
+.mapDivLabel {
+  font-size: 1.6em;
+}
+
+img {
+    object-fit: contain;
+    width: 50%;
+}
+
+#time-line-slider {
+    display: inline-flex;
+    max-width: 400px;
+}
+#slider {
+    width: 800px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.slider-label {
+    line-height: 2;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.timeLine-row {
+    height: 450px;
+    width: 950px;
+}
+
+#timeLineDiv {
+    height: 100%;
+    width:100%;
+}
+#timeLineDetailDiv {
+    height: 100px;
+    width:320px;
+}
+
+.mapVis-row {
+    height: 350px;
+    width: 900px;
+}
+
+.form-check-toggle-label {
+    white-space: nowrap;
+}
+
+.v2-vis-container {
+    height: 350px;
+}
+
+.v2-legend-label {
+    font-size: .9em;
+}
+
+/* Rounded border */
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+}
+

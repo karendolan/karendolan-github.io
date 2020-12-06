@@ -1,0 +1,347 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Nevada Census</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+	<!-- WRAPPER -->
+	<div class="container-fluid">
+		<!-- HEADING -->
+		<div class="row d-flex justify-content-center align-middle">
+			<div class="title-header" >
+				<div class="align-self-center">
+					<h1>Nevada Census</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="content col-10 offset-1">
+			<div class="descriptive-text pb-3 mx-auto">
+				<p>
+					The “Nevada Census Microdata” consists of
+					manuscript census pages from the state of Nevada,
+					for the federal censuses of 1860, 1870, 1880, 1900, 1910, and 1920.
+				</p>
+				<p>
+					The data includes the place of birth of the people living in Nevada
+					during the census. Nevada became a state in 1864. Many people came to
+					Nevada from outside the state to look for opportunities they could
+					not find in their own countries.
+				</p>
+				<p>
+					Who are the people that came to Nevada?
+				</p>
+				<p>
+					Datasource: James, Ronald M.; Fliess, Kenneth H.; Nystrom, Eric C., 2014,
+					"Nevada Census Microdata, 1860-1920", https://doi.org/10.7910/DVN/27218,
+					Harvard Dataverse, V2
+				</p>
+			</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="content col-10 offset-1">
+				<hr class="rounded">
+				<!-- CONTENT -->
+				<!-- Hook V1 Description  -->
+				<div class="row d-flex justify-content-center align-middle p-3 vis-title-row" >
+					<div class="descriptive-text pb-3 mx-auto">
+						<h3 class="text-center">Where do Nevada immigrants come from?</h3>
+						<p>The birthplace of people living in Nevada changes over
+							the course of the 1860 to 1920 census.
+							Why are people leaving their home country to Nevada?
+						</p>
+						<p>
+							Hover over the timeline to change the census date
+							to see where most of the people living in Nevada came from.
+						</p>
+					</div>
+				</div>
+
+				<!-- HOOK V1 2nd row timeline scrubber -->
+				<div class="timeLine-row row align-items-end p-1 mx-auto">
+					<!-- The timeline scrubber -->
+					<div id="timeLineDiv" class="col-10">
+					</div>
+					<div class="col-2 mb-4">
+						<!-- Place information Details -->
+						<div class="row" id="timeLinedetailDiv" >
+						</div>
+						<div class="row">
+							<!-- Select box to choose the ranking type -->
+							<!-- Toggle for state/country view -->
+							<form class="form-inline">
+								<div class="form-group">
+									<label class="col-form-label mr-1" for="chart-type">Immigration from: </label>
+									<div class="">
+										<select class="form-control custom-select btn btn-secondary" id="chart-type">
+											<option value="countryPob">Countries</option>
+											<option value="statePob">USA States</option>
+										</select>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="row v1-toggle-usa">
+							<div class="form-check v1-toggle-usa-form">
+								<input type="checkbox" class="form-check-input" id="v1ToggleNative">
+								<label class="form-check-toggle-label" for="v1ToggleNative">Include USA</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- HOOK V1 3rd row, Map & Bar chart with description -->
+				<div class="row p-1" style="height: 50vh;">
+					<div class="col-12">
+						<div class="mapVis-row row justify-content-center mx-auto">
+							<!-- MAP -->
+							<div id="mapDivLabel"></div>
+							<div id="mapDiv" style="height: 100%; width:100%;">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END V1 -->
+				<hr class="rounded">
+				<!-- V2 visualization AREA -->
+				<!-- Visualization Rising Insights -->
+				<div class="row d-flex justify-content-center align-middle p-3 vis-title-row" >
+					<div class="descriptive-text mb-5 mx-auto">
+						<h3 class="text-center">Who stays in Nevada?</h3>
+						<p>What attributes of people who stay in Nevada over multiple census?
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-md-center">
+					<div class="col-6">
+						<h4>How likely am I to stay in Nevada, if I am...</h4>
+						<div class="checkbox-Gender select-options">
+							<div class="checkbox-gender gender-female form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-Gender" id="checkbox-gender-female" value="female">
+								<label class="form-check-label" for="checkbox-gender-female">Female</label>
+							</div>
+							<div class="checkbox-gender gender-male form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-Gender" id="checkbox-gender-male" value="male">
+								<label class="form-check-label" for="checkbox-gender-male">Male</label>
+							</div>
+						</div>
+						<div class="checkbox-Age select-options">
+							<span>Arrived as an &nbsp </span>
+							<div class="checkbox-age age-adult form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-Age" id="checkbox-age-adult" value="adult">
+								<label class="form-check-label" for="checkbox-age-adult">Adult</label>
+							</div>
+							<div class="checkbox-age age-teen form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-Age" id="checkbox-age-teen" value="teen">
+								<label class="form-check-label" for="checkbox-age-teen">Teenager</label>
+							</div>
+							<div class="checkbox-age age-child form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-Age" id="checkbox-age-child" value="child">
+								<label class="form-check-label" for="checkbox-age-child">Child</label>
+							</div>
+						</div>
+						<div class="checkbox-pob select-options">
+							<div class="checkbox-native-NV is-NV form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-NV-native" id="checkbox-NV" value="NV">
+								<label class="form-check-label" for="checkbox-NV">Born in Nevada</label>
+							</div>
+							<div class="checkbox-non-NV is-non-NV form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-NV-native" id="checkbox-non-NV" value="non-NV">
+								<label class="form-check-label" for="checkbox-non-NV">Not born in Nevada</label>
+							</div>
+							<div class="checkbox-native-USA is-USA form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-USA-native" id="checkbox-USA" value="USA">
+								<label class="form-check-label" for="checkbox-USA">Born in USA</label>
+							</div>
+							<div class="checkbox-non-USA is-non-USA form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-USA-native" id="checkbox-non-USA" value="non-USA">
+								<label class="form-check-label" for="checkbox-non-USA">Not born in USA</label>
+							</div>
+						</div>
+						<div class="checkbox-race select-options">
+							<div class="checkbox-race is-white form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-race" id="checkbox-white" value="White">
+								<label class="form-check-label" for="checkbox-white">Race "white"</label>
+							</div>
+							<div class="checkbox-race is-non-white form-check form-check-inline">
+								<input class="form-check-input v2-checkbox-input" type="radio" name="checkbox-race" id="checkbox-non-white" value="non-White">
+								<label class="form-check-label" for="checkbox-non-white">Not race "white"</label>
+							</div>
+						</div>
+						<div class="v2-description-text">
+
+						</div>
+					</div>
+					<div class="col-5">
+						<p>
+						The "dot" in the visualization below highlights that the majority of people are only in 1 of the 4 early census counts.
+						</p>
+						<p>
+							This visualization shows how short the stay was for most people in these early years Nevada.
+							Most non-white American born people are "I" for Native American. Most non-white foreign born people are "C" for
+							Chinese.
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-center v2-vis-container" >
+					<div class="col-12 vis-rising-insight d-inline-flex justify-content-center align-middle" style="height: 100%; width:100%;"
+						 id="distanceVisDiv">
+					</div>
+				</div>
+				<!-- END V2-->
+				<hr class="rounded">
+				<!-- Visualization Revelation V3 -->
+				<div class="row d-flex justify-content-center align-middle p-3 vis-title-row" >
+					<div class="descriptive-text pb-3 mx-auto">
+						<h3 class="text-center">Which immigrants stayed and settled in Nevada?</h3>
+						<p>Did certain immigrant groups stay over the course of the census years and start families?
+							While other groups left?
+						</p>
+					</div>
+				</div>
+				<div class="row justify-content-center" >
+					<div class="form-group row">
+						<label class="col-form-label p-3" for="chart-type">Normalize Graph: </label>
+						<div class="">
+							<select class="form-control custom-select btn btn-secondary" id="SAC-type">
+
+								<option value="abs">Absolute Values</option>
+								<option value="rat">Ratio</option>
+							</select>
+						</div>
+					</div>
+					<div class="vis-main-message d-inline-flex justify-content-center align-middle" id="Gender" style="height: 100%; width:100%;">
+<!--						<img src="img/main-message-story.png" alt="main message placeholder" />-->
+					</div>
+					These gender charts primarily depict the transition of Nevada from the a predominantly mining-focused and thus male-dominated
+					region of its early statehood, through its development into a fully-fledged economic region in its own right. By the 1880s-1900s,
+					there was a much more even gender distribution, as immigrants settled down and raised families, although there still remained a significantly higher
+					male-to-female ratio.
+					<div class="vis-main-message d-inline-flex justify-content-center align-middle" id="Out-of-State" style="height: 100%; width:100%;">
+						<!--						<img src="img/main-message-story.png" alt="main message placeholder" />-->
+					</div>
+					The overwhelming dominance of immigrants to Nevada in the first few decades is on display here, as Nevada in the early years of its
+					statehood is primarily populated by immigrants. This matches closely with the data from the gender chart - those immigrants were particularly
+					likely to be male, and generally were miners or other laborers who moved for their job opportunity. The number of native-born Nevadans also
+					increases almost linearly after the 1880, suggesting a relative stability as families settle down.
+					<div class="vis-main-message d-inline-flex justify-content-center align-middle" id="Race" style="height: 100%; width:100%;">
+						<!--						<img src="img/main-message-story.png" alt="main message placeholder" />-->
+					</div>
+					From its formation as a state and admittance to the Union in 1864, Nevada has remained a predominantly white state, with a not-
+					insignificant proportion of Chinese citizens, many of whom likely worked on the railroads or were attracted by the booming gold mines.
+					Although this chart appears to show a rising proportion of Native Americans, it is important to remember that this is
+					only census-designated data - it is unlikely that there was necessarily a rise in the actual Native American population
+					as much as a rise in census coverage.
+
+				</div>
+				<hr class="rounded">
+				<!-- Visualization Resolution -->
+				<div class="row d-flex justify-content-center align-middle p-3 vis-title-row" >
+					<div class="descriptive-text pb-3 mx-auto">
+						<h3 class="text-center">Why does the Nevada immigration story matter?</h3>
+						<p>The Nevada immigration story has implications on current immigration and refugee policy.
+							We can look at these immigrants and see what jobs they had that kept
+							them in Nevada; this can give us a lens into how we handle new immigrants to our
+							nation today.
+						</p>
+						<p>
+							Looking over the various census filters, it appears that the grand majority of employed male
+							immigrants held manual labor positions, including mining, farming, and general laborer
+							positions. Mining was especially a significant part of Nevada's early industry, with the
+							discovery of silver deposits within the state's boundaries. However, as the mining industry
+							began to decline towards the end of the 19th century, fewer and fewer people remained
+							employed as miners. Some became unemployed, some likely left Nevada, and some likely took up
+							other occupations.
+						</p>
+						<p>
+							For the United States today, new immigrants may come to the U.S. seeking work in the most
+							lucrative fields of today, similar to the immigrants to Nevada in the 19th century. However,
+							what will happen when those industries change? Will that influx of immigrants choose to stay
+							in the United States and find other jobs? Will they go unemployed instead? Or will they return
+							to the places they emmigrated from?
+						</p>
+						<p>
+							If Nevada is an example of this happening in the past, it shows that immigrants will likely
+							remain within their new homes, choosing to find alternate employment or go unemployed, rather
+							than moving elsewhere. Filter your way through the various Nevada censuses, and watch how as
+							the miner population of Nevada declines, the unemployed and non-miner labor jobs increase.
+						</p>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row" >
+						<div class="vis-resolution d-inline-flex justify-content-center align-middle" style="height: 100%; width:100%;">
+							<div class="col-3">
+								<div id="bubble-legend" ></div>
+							</div>
+							<div class="col-3">
+								<div class="dropdown" >
+									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Filter by Immigration Group
+									</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="bubble-dropdown">
+										<a class="dropdown-item" aria-disabled="true"><input type="checkbox" id="filter-1860"> 1860-1870</a>
+										<a class="dropdown-item" aria-disabled="true"><input type="checkbox" id="filter-1870"> 1870-1880</a>
+										<a class="dropdown-item" aria-disabled="true"><input type="checkbox" id="filter-1880"> 1880-1890</a>
+										<a class="dropdown-item" aria-disabled="true"><input type="checkbox" id="filter-1900"> 1900-1910</a>
+										<a class="dropdown-item" aria-disabled="true"><input type="checkbox" id="filter-1910"> 1910-1920</a>
+										<a class="dropdown-item" aria-disabled="true"><input type="checkbox" id="filter-1920"> 1920-1930</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="vis-resolution d-inline-flex justify-content-center align-middle" style="height: 100%; width:100%;">
+								<div id="men-bubble"></div>
+								<div id="women-bubble"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- - - - - - - - - - - - >
+	<    Load JS libraries     >
+	<- - - - - - - - - - - - -->
+
+	<!-- BOOTSTRAP -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<!-- d3 -->
+	<script src="https://d3js.org/d3.v6.min.js"></script>
+
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<script src="https://d3js.org/topojson.v2.min.js"></script>
+	<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+	<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+	<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+
+	<!-- OWN JS -->
+	<script src="js/helpers.js"></script>
+	<script src="js/mapVis.js"></script>
+	<script src="js/distanceVis.js"></script>
+	<script src="js/lineBrushVis.js"></script>
+	<script src="js/wheretext.js"></script>
+	<script src="js/stackedAreaVis.js"></script>
+	<script src="js/bubbleVis.js"></script>
+	<script src="js/bubbleLegend.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

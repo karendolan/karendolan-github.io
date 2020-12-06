@@ -1,0 +1,15 @@
+let maintext = [];
+
+maintext = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis tellus metus. Suspendisse condimentum mollis tellus id tempus. Donec consequat erat at diam malesuada sagittis vel a ipsum. Quisque leo dolor, finibus ac massa euismod, congue sollicitudin turpis. Sed commodo lorem a tellus efficitur, at aliquet ex dictum. Integer placerat vel diam non ullamcorper. Curabitur ornare odio eu efficitur pulvinar. Ut cursus venenatis justo ornare porttitor. Curabitur ac ante ut erat mattis volutpat in ac arcu. Vestibulum viverra congue magna, semper molestie nisi porttitor vel. Quisque non est arcu.",
+
+    "Integer ac placerat dolor. Nulla vitae lacinia est, ut condimentum orci. Mauris ut tellus quis urna tristique malesuada ac a lacus. Nunc at pretium lorem. Donec dictum urna ut turpis mattis laoreet vitae sodales dui. Vestibulum bibendum nisl vitae porttitor mattis. Nunc at nibh turpis. Nulla lobortis suscipit ligula, in malesuada leo varius id. Nulla aliquet ipsum sit amet ultrices molestie. Vivamus placerat venenatis aliquam. Aenean viverra iaculis porttitor.",
+
+    "Nam auctor neque sit amet efficitur fringilla. Curabitur tincidunt ullamcorper elit, nec mattis lacus finibus ac. Quisque ac tellus semper, pharetra lectus a, feugiat libero. Nulla facilisi. Sed interdum varius neque ut malesuada. Quisque eu tempor odio. Fusce mauris quam, laoreet vitae est a, facilisis tristique tortor. Donec consequat dui sed consectetur maximus. Integer ac risus eget neque venenatis commodo. Duis eget quam nunc. Nulla condimentum leo magna, consequat pretium felis viverra egestas.",
+
+    "Aenean nec nulla vitae metus feugiat vehicula malesuada ut eros. Suspendisse ac nisi est. Phasellus faucibus massa id fringilla gravida. Phasellus at ante tristique, tristique mi eget, tincidunt odio. Phasellus dignissim neque ac fermentum maximus. Praesent varius, velit in maximus pellentesque, purus lectus aliquet risus, et varius magna ligula nec nulla. Etiam in elit a tortor tincidunt vehicula nec consectetur mi.",
+
+    "Proin id hendrerit ligula. Etiam interdum, leo ut mollis ornare, dolor sapien venenatis nunc, at pellentesque orci nisl at nisi. Proin in lorem elit. Etiam id iaculis leo. Morbi tempus elementum facilisis. In hac habitasse platea dictumst. In scelerisque tempus neque sed maximus. Aenean nec suscipit leo, sed cursus urna. Nulla id venenatis ipsum, quis porta urna. Ut eget accumsan ligula. Aenean rutrum sit amet neque ac luctus. Sed varius, leo vitae efficitur sodales, orci dui auctor velit, quis laoreet nisl mauris at libero. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+
+    "In hac habitasse platea dictumst. Quisque nec maximus felis, quis pellentesque nisi. Donec mattis, mi consequat hendrerit malesuada, lorem nisi congue purus, tempor tempus nisl sapien sit amet felis. Ut sit amet vehicula mauris. Maecenas hendrerit facilisis ante vel posuere. In tincidunt lacus eget turpis consequat tincidunt. Proin risus libero, condimentum eget felis non, tincidunt porta justo."
+]

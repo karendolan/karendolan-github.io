@@ -1,2 +1,2 @@
-# karendolan-github.io
-Test github.io
+# vis-cs171
+Final Project
