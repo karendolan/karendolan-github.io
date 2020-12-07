@@ -480,7 +480,7 @@ class LineBrushVis {
 
     // Tool tip mouse function
     mousemoveTooltip(event, vis) {
-        console.log("mousemoveTooltip start", new Date());
+        // console.log("mousemoveTooltip start", new Date());
         let xPos = d3.pointer(event)[0]; // get the x position of mouse pointer
         // get the xscale invert
         let xDate = vis.x.invert(xPos);
@@ -523,7 +523,7 @@ class LineBrushVis {
             selectedTimeRange = [yearStr, yearStr];
             updateVisualizationHook();
         }
-        console.log("mousemoveTooltip end", new Date());
+        // console.log("mousemoveTooltip end", new Date());
 
     }
 }

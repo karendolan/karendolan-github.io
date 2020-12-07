@@ -295,7 +295,7 @@ historicalHookInsights.statePob =
         {year: 1860,
             text: [
                 "1859: Nevada Comstock Lode discovered (silver & gold)",
-                "Nevada is not a state until 1864",
+                "Nevada becomes a state in 1864",
                 "California Gold Rush",
                 "Industry takes control over California mines",
                 "1863: American Civil War",
@@ -303,26 +303,36 @@ historicalHookInsights.statePob =
                 "Several US Indian Wars",
             ]
         },
+        {year: 1870, text: [
+                "15th Amendment allows men of all color to vote",
+                "Start of US Gilded Age of economic growth",
+            ]
+        },
         {year: 1880,
             text: [
-                "California Gold Rush and Industry control of CA mines"
+                "California Gold Rush and Industry control of CA mines",
+                "Continued movement of people displaced from US Civil War"
             ]
         },
         {year: 1900,
             text: [
                 "1896 Utah granted statehood",
-                "California Gold Rush and Industry control of CA mines"
+                "Less opportunity in California for miners",
+                "Existing Nevada mines have reduced output"
             ]
         },
         {year: 1910,
             text: [
                 "1902 Gold discovered at Goldfield, Nevada",
-                "Nevada economic bust and population declines 1/4th"
+                "Nevada economic bust and population declines 1/4th",
+                "World War I starts in 1914"
             ]
         },
         {year: 1920,
             text: [
-                ""
+                "Prohibition starts (passing of 18th Amendment)",
+                "Women win the right to vote (passing of 19th Amendment)",
+                "The last American troops return from Europe after WWI"
             ]
         },
     ];
@@ -336,13 +346,15 @@ historicalHookInsights.countryPob =
             ]
         },
         {year: 1870, text: [
-                "Irish Land War, return of potato blight",
+                "Continuing Irish emigration related to famine",
+                "Continuing Chinese emigration related to Clan Wars",
                 "1873: UK starts the Long Depression (economic recession)",
             ]
         },
         {year: 1880, text: [
-                "Irish Land War, return of potato blight",
+                "Irish Land War, and a return of potato blight",
                 "1873: UK starts the Long Depression (economic recession)",
+                "1880 is peak of UK emigration to other countries"
             ]
         },
         {year: 1900,
@@ -357,13 +369,15 @@ historicalHookInsights.countryPob =
             text: [
                 "Greece in Balkan Wars",
                 "Italo-Turkish War",
-                "Spanish Restoration Crisis"
+                "Spanish Restoration Crisis",
+                "Peak of Italian emigration fleeing rural poverty"
             ]
         },
         {year: 1920,
             text: [
                 "1916: Irish Easter Rising",
-                "1918: Start of Irish Independence"
+                "1918: Start of Irish Independence",
+                "Continued Italian emigration"
             ]
         },
     ];

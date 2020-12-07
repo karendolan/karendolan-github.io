@@ -39,8 +39,6 @@ class StackedAreaVis {
                 break;
         }
 
-        // console.log(vis.data)
-        // console.log("init vis")
         vis.margin = {top: 40, right:230, bottom: 60, left: 80};
 
         vis.width = 500
@@ -106,7 +104,28 @@ class StackedAreaVis {
             .text("Date");
 
 
+        vis.legend = vis.svg.selectAll("mydots")
+            .data([...vis.categories].reverse())
+            .enter()
+            .append("circle")
+            .attr("cx", vis.width + 15)
+            .attr("cy", function(d,i){ return 100 + i*18}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("r", 5)
+            .style("fill", function(d){
+                return vis.colorScale(d)})
 
+        vis.legend.exit().remove()
+
+        vis.labels = vis.svg.selectAll("mylabels")
+            .data([...vis.categories].reverse())
+            .enter()
+            .append("text")
+            .attr("x", vis.width + 25)
+            .attr("y", function(d,i){ return 100 + i*18}) // 100 is where the first dot appears. 25 is the distance between dots
+            //.style("fill", function(d){ return vis.colorScale(d)})
+            .text(function(d){ return vis.catMap[d]})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
 
 
         vis.wrangleData();
@@ -137,9 +156,6 @@ class StackedAreaVis {
             cumulCat.push([yearMap[0], d3.group(yearMap[1], d => d[vis.quality])])
         }
 
-
-        // console.log("categories")
-        // console.log(cumulCat)
 
         vis.filteredData = []
         for (var year of cumulCat) {
@@ -194,8 +210,6 @@ class StackedAreaVis {
 
         vis.stackedData = stack(vis.filteredData)
 
-        console.log("filtered: ")
-        console.log(vis.filteredData)
         vis.area = d3.area()
             .x(d=> vis.x(d.data.Year))
             .y0(d=> vis.y(d[0]))
@@ -297,11 +311,12 @@ class StackedAreaVis {
                     .style("display", "block")
             })
             .on("mouseout", function (d, i){
-                // vis.tooltipGroup
-                //     .style("display", "none")
             })
             .on('mousemove', function (event, d) {
+                vis.tooltipGroup
+                    .style("display", "block")
                 vis.mousemove(event, vis, d);
+
             })
 
         // TO-DO (Activity IV): update tooltip text on hover
@@ -313,28 +328,7 @@ class StackedAreaVis {
         vis.svg.select(".x-axis").call(vis.xAxis);
         vis.svg.select(".y-axis").call(vis.yAxis);
 
-        vis.legend = vis.svg.selectAll("mydots")
-            .data([...vis.categories].reverse())
-            .enter()
-            .append("circle")
-            .attr("cx", vis.width + 15)
-            .attr("cy", function(d,i){ return 100 + i*18}) // 100 is where the first dot appears. 25 is the distance between dots
-            .attr("r", 5)
-            .style("fill", function(d){
-                return vis.colorScale(d)})
 
-        vis.legend.exit().remove()
-
-        vis.labels = vis.svg.selectAll("mylabels")
-            .data([...vis.categories].reverse())
-            .enter()
-            .append("text")
-            .attr("x", vis.width + 25)
-            .attr("y", function(d,i){ return 100 + i*18}) // 100 is where the first dot appears. 25 is the distance between dots
-            //.style("fill", function(d){ return vis.colorScale(d)})
-            .text(function(d){ return vis.catMap[d]})
-            .attr("text-anchor", "left")
-            .style("alignment-baseline", "middle")
 
         vis.labels.exit().remove()
 
@@ -349,14 +343,13 @@ class StackedAreaVis {
 
         let index = bisectDate(vis.filteredData, timeScaleRef(xPos))
 
-
         let i = 0
         for (var cat in vis.filteredData[index]){
             if (cat != "Year" && cat != 'Tot') {
                 let catVal = vis.filteredData[index][cat]
                 vis.svg.select("#cat-" + cat)
                     .text(vis.catMap[cat]+ ": " + Math.round(catVal * 10000) / 10000 )
-                    .attr("transform", "translate(" + Math.min(xPos, 330) + ", 0)")
+                    .attr("transform", "translate(" + Math.min(xPos, 320) + ", 0)")
                     .attr("font-size", "15px")
                 i += 1
             }
@@ -365,12 +358,12 @@ class StackedAreaVis {
 
         vis.svg.select("#tooltip-population")
             .text("population: ")
-            .attr("transform", "translate(" + Math.min(xPos, 330) + ", 0)")
+            .attr("transform", "translate(" + Math.min(xPos, 320) + ", 0)")
         vis.svg.select(".tooltip-group")
             .attr("transform", "translate(" + xPos + ", 0)")
         vis.svg.select("#tooltip-date")
             .text("Census Year: " + (vis.filteredData[index]['Year'].getYear() + 1900).toString())
-            .attr("transform", "translate(" + Math.min(xPos, 330) + ", 0)")
+            .attr("transform", "translate(" + Math.min(xPos, 320) + ", 0)")
             .attr("font-size", "20px")
 
     }
